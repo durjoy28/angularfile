@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang ="en" ng-app="myModule">
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<style> .blue{color:blue}</style>
+<style> .red{color:red}</style>
+	<title></title>
+	<!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>-->
+<script src="angular.min.js"></script>	
+<script src="app.js"></script>
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+</head>
+<body ng-controller="myctrl">
+<div >
+	<!--<h1> 12+45={{12+45}}</h1></br>
+	<h1>{{'hello'}}</h1></br>
+	<h1>{{ {name:"kamal"}.name}}</h1>
+	<h1 class="blue">{{msg}}</h1></br>-->
+	<h1 class="red">Author Name:{{myData.name}}</h1>
+	<h1>Employees:</h1>
+	<table class="table table-striped">
+		<thead>
+			<tr>
+			<th> Name</th>
+			<th> Salary</th>
+			<th> Designation</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="emp in employees">
+				<td><h2>{{emp.name}}</h2></td>
+				<td><h2>{{emp.salary}}</h2></td>
+				<td><h2>{{emp.designation}}</h2></td>
+			</tr>
+		</tbody>
+	</table>
+	<!--nested ng repeat..like nested for.loop-->
+	<ul><h1>Countries:</h1>
+		<li ng-repeat="country in countries">
+		<h2>{{country.name}}</h2>	
+		<ul>
+		<li ng-repeat="city in country.cities">
+			<h3>{{city.name}}</h3>
+		</li></ul></li>
+	</ul> 
+	
+</div>
+<!--Eta HTML WAY <div> <img src="Bangladesh.jpg" alt="MyBD"></div>  Now lets angularjs-->
+<img ng-src="{{image}}" alt="MyBD">
+<div>
+	<h1 ng-bind="msg"></h1>
+	<input type="text" data-ng-model="msg1">
+	<h1>{{msg1}}</h1>
+</div>
+</body>
+</html>
